@@ -2,21 +2,37 @@
   <div class="memo">
     <div class="act">
       <button class="btn btn-primary" @click="add()">+ 추가</button>
+      <!-- <button class="btn btn-primary" @click="dlt()">- 삭제</button> -->
     </div>
     <ul>
-      <li v-for="(d, index) in data" key="index">{{ d }}</li>
+      <li v-for="(d, index) in state.data" key="index">{{ d }}</li>
     </ul>
   </div>
 </template>
 
 <script>
+import { reactive } from "vue";
+import axios from "axios";
+
 export default {
-  data() {
-    const data = ["data - 1", "data - 2", "data - 3", "data - 4", "data - 5"];
+  setup() {
+    const state = reactive({
+      data: [],
+    });
+
+    axios.get("/api/memos").then((res) => {
+      state.data = res.data;
+    });
+
     const add = () => {
-      data.push("추가된 내용");
+      const content = prompt("입력");
+      //   state.data.push("추가된 내용");
+      axios.post("/api/memos", { content }).then((res) => {
+        state.data = res.data;
+        console.log(res.data);
+      });
     };
-    return { data };
+    return { state, add };
   },
 };
 </script>
@@ -34,6 +50,7 @@ export default {
     li {
       padding: 15px;
       margin: 5px 10px;
+      border: 1px solid #eee;
     }
   }
 }

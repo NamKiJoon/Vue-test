@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <Header />
-    <div>content</div>
     <Memo />
     <Footer />
   </div>
