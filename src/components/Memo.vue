@@ -2,10 +2,14 @@
   <div class="memo">
     <div class="act">
       <button class="btn btn-primary" @click="add()">+ 추가</button>
-      <!-- <button class="btn btn-primary" @click="dlt()">- 삭제</button> -->
     </div>
     <ul>
-      <li v-for="(d, index) in state.data" key="index">{{ d }}</li>
+      <li v-for="d in state.data" key="d.id">
+        {{ d.content }}
+        <span>
+          <button class="btn btn-primary" @click="edit(d.id)">수정</button>
+        </span>
+      </li>
     </ul>
   </div>
 </template>
@@ -24,15 +28,28 @@ export default {
       state.data = res.data;
     });
 
+    const edit = (id) => {
+      const content = prompt(
+        "내용을 입력해주세요",
+        state.data.find((d) => d.id === id).content
+      );
+      axios.put("/api/memos/" + id, { content }).then((res) => {
+        state.data = res.data;
+      });
+    };
+
     const add = () => {
       const content = prompt("입력");
-      //   state.data.push("추가된 내용");
+      if (!content) {
+        alert("입력!");
+        return add();
+      }
       axios.post("/api/memos", { content }).then((res) => {
         state.data = res.data;
         console.log(res.data);
       });
     };
-    return { state, add };
+    return { state, add, edit };
   },
 };
 </script>
@@ -51,6 +68,9 @@ export default {
       padding: 15px;
       margin: 5px 10px;
       border: 1px solid #eee;
+
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
