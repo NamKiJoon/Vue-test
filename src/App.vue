@@ -7,7 +7,13 @@
 <script>
 import Ground from "./components/Ground.vue";
 
-export default { components: { Ground } };
+export default {
+  name: `app`,
+  components: { Ground },
+  data() {
+    return {};
+  },
+};
 </script>
 
-<style></style>
+<style lang="scss"></style>

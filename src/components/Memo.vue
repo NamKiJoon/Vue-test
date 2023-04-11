@@ -1,13 +1,19 @@
 <template>
   <div class="memo">
     <div class="act">
-      <button class="btn btn-primary" @click="add()">+ 추가</button>
+      <Button
+        label="추가"
+        id="Btn"
+        class="card flex justify-content-center"
+        @click="add()"
+      ></Button>
     </div>
     <ul>
-      <li v-for="d in state.data" key="d.id">
+      <li v-for="d in state.data" key="d">
         {{ d.content }}
         <span>
-          <button class="btn btn-primary" @click="edit(d.id)">수정</button>
+          <Button class="btn btn-primary" @click="edit(d.id)">수정</Button>
+          <!-- <button class="btn btn-primary" @click="dlt(d.id)">삭제</button> -->
         </span>
       </li>
     </ul>
@@ -17,6 +23,9 @@
 <script>
 import { reactive } from "vue";
 import axios from "axios";
+import "primevue/resources/themes/lara-light-indigo/theme.css";
+import "primeicons/primeicons.css";
+import "primevue/resources/primevue.min.css";
 
 export default {
   setup() {
@@ -24,7 +33,7 @@ export default {
       data: [],
     });
 
-    axios.get("/api/memos").then((res) => {
+    axios.get("/api/memos/").then((res) => {
       state.data = res.data;
     });
 
@@ -33,9 +42,14 @@ export default {
         "내용을 입력해주세요",
         state.data.find((d) => d.id === id).content
       );
-      axios.put("/api/memos/" + id, { content }).then((res) => {
-        state.data = res.data;
-      });
+      axios
+        .put("/api/memos/" + id, { content })
+        .then((res) => {
+          state.data = res.data;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     };
 
     const add = () => {
@@ -56,6 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .memo {
+  width: 90vw;
   .act {
     padding: 10px 10px 5px 5px;
     text-align: right;

@@ -1,7 +1,10 @@
 <template>
   <div class="app">
     <Header />
-    <Memo />
+    <div class="mainContainer">
+      <SideNav />
+      <router-view />
+    </div>
     <Footer />
   </div>
 </template>
@@ -10,7 +13,20 @@
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
 import Memo from "./Memo.vue";
-export default { components: { Footer, Memo, Header } };
+import SideNav from "./SideNav.vue";
+import Home from "./Home.vue";
+export default {
+  name: `Ground`,
+  components: { Footer, Memo, Header, SideNav, Home },
+  data() {
+    return {};
+  },
+};
 </script>
 
-<style></style>
+<style>
+.mainContainer {
+  display: flex;
+  height: 86vh;
+}
+</style>
