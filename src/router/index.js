@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../components/Home.vue";
 import Memo from "../components/Memo.vue";
 import Page from "../components/Page.vue";
+import Page2 from "../components/Page2.vue";
+import Page3 from "../components/Page3.vue";
 import Setting from "../components/Setting.vue";
 
 const routes = [
@@ -19,6 +21,16 @@ const routes = [
     name: "page",
     path: "/page",
     component: Page,
+  },
+  {
+    name: "page2",
+    path: "/page2",
+    component: Page2,
+  },
+  {
+    name: "page3",
+    path: "/page3",
+    component: Page3,
   },
   {
     name: "setting",

@@ -3,7 +3,9 @@
     <nav class="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/memo">Memo</router-link>
-      <router-link to="/page">Page</router-link>
+      <router-link to="/page">Page1</router-link>
+      <router-link to="/page2">Page2</router-link>
+      <router-link to="/page3">Page3</router-link>
       <router-link to="/setting">Setting</router-link>
     </nav>
   </div>

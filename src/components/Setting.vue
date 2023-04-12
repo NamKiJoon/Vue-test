@@ -1,3 +1,9 @@
-<template><h1>setting</h1></template>
+<template><div class="setting">setting</div></template>
 <script></script>
-<style></style>
+<style scoped>
+.setting {
+  width: 90vw;
+  background-color: #dfe2d0;
+  border: 1px solid #6b5e5e;
+}
+</style>

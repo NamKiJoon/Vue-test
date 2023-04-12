@@ -1,5 +1,5 @@
 <template>
-  <div class="page">page1</div>
+  <div class="page2">page2</div>
 </template>
 
 <script>
@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page {
+.page2 {
   width: 90vw;
-  background-color: #e2d0c3;
+  background-color: #d1e2c3;
   border: 1px solid #6e5959;
 }
 </style>
