@@ -5,16 +5,16 @@
       <SideNav />
       <router-view />
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
-import Memo from "./Memo.vue";
-import SideNav from "./SideNav.vue";
-import Home from "./Home.vue";
+import Header from "../TopNav/Header.vue";
+import Footer from "../Footer/Footer.vue";
+import Memo from "../../Pages/Memo.vue";
+import SideNav from "../SideNav/SideNav.vue";
+import Home from "../../Pages/Home.vue";
 export default {
   name: `Ground`,
   components: { Footer, Memo, Header, SideNav, Home },
@@ -27,6 +27,6 @@ export default {
 <style>
 .mainContainer {
   display: flex;
-  height: 86vh;
+  height: 90vh;
 }
 </style>

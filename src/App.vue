@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Ground from "./components/Ground.vue";
+import Ground from "./components/Main/Ground.vue";
 
 export default {
   name: `app`,

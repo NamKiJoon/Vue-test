@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@vuestic/ag-grid-theme": "^1.0.3",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
@@ -26,12 +29,19 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@mdi/font": "^7.2.96",
+    "@mdi/js": "^7.2.96",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "material-design-icons-iconfont": "^6.7.0"
+    "material-design-icons-iconfont": "^6.7.0",
+    "vue-cli-plugin-vuestic-ui": "~1.0.11"
   },
   "eslintConfig": {
     "root": true,

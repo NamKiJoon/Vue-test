@@ -1,18 +1,13 @@
 <template>
   <div class="memo">
     <div class="act">
-      <Button
-        label="추가"
-        id="Btn"
-        class="card flex justify-content-center"
-        @click="add()"
-      ></Button>
+      <va-button @click="add()">추가</va-button>
     </div>
     <ul>
       <li v-for="d in state.data" key="d">
         {{ d.content }}
         <span>
-          <Button class="btn btn-primary" @click="edit(d.id)">수정</Button>
+          <va-button @click="edit(d.id)">수정</va-button>
           <!-- <button class="btn btn-primary" @click="dlt(d.id)">삭제</button> -->
         </span>
       </li>

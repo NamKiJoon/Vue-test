@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../components/Home.vue";
-import Memo from "../components/Memo.vue";
-import Page from "../components/Page.vue";
-import Page2 from "../components/Page2.vue";
-import Page3 from "../components/Page3.vue";
-import Setting from "../components/Setting.vue";
+import Home from "../Pages/Home.vue";
+import Memo from "../Pages/Memo.vue";
+import Page from "../Pages/Page.vue";
+import Page2 from "../Pages/Page2.vue";
+import Page3 from "../Pages/Page3.vue";
+import Setting from "../Pages/Setting.vue";
 
 const routes = [
   {

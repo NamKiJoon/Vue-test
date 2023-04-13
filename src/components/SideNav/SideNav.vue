@@ -26,7 +26,7 @@ export default {
   width: 10vw;
   .nav {
     width: 10vw;
-    height: 86vh;
+    height: 90vh;
     background-color: #efefef;
     text-align: center;
     border-right: 1px solid #c0c0c0;
