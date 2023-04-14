@@ -17,7 +17,6 @@ export default {
     return {
       value: 0,
       items: [
-        "img1.jpg",
         "https://picsum.photos/1500",
         "https://picsum.photos/1501",
         "https://picsum.photos/1502",

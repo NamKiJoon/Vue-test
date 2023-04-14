@@ -1,7 +1,7 @@
 <template>
   <form action="#">
-    <textarea cols="30" rows="5" class="userText"></textarea>
-    <input type="submit" value="확인" />
+    <textarea cols="30" rows="41" class="userText"></textarea>
+    <input type="submit" value="In" />
   </form>
 </template>
 <script>
